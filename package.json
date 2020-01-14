@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node ace test"
+    "test": "mocha"
   },
   "keywords": [
     "adonisjs",
@@ -27,7 +27,9 @@
     "@adonisjs/session": "^1.0.27",
     "@adonisjs/shield": "^1.0.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^7.0.0"
+  },
   "autoload": {
     "App": "./app"
   }
