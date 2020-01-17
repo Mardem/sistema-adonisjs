@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha",
-    "serve-watch":  "adonis serve --watch ."
+    "serve-watch": "adonis serve --watch ."
   },
   "keywords": [
     "adonisjs",
@@ -29,6 +29,7 @@
     "@adonisjs/shield": "^1.0.8"
   },
   "devDependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "mocha": "^7.0.0"
   },
   "autoload": {

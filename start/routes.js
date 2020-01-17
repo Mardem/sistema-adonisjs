@@ -22,7 +22,9 @@ Route.get('/', ({view}) => {
 
 Route.get('/login', ({ view }) => {
   // show login form
-  return view.render('user/login')
+  return view.render('user/login', {
+    name: 'Sistema 1'
+  })
 })
 
 Route.post('/login', () => {
@@ -35,9 +37,9 @@ Route.put('/logout', () => {
   return 'PUT /logout'
 })
 
-Route.get('/register', () => {
+Route.get('/register', ({ view }) => {
   // show registration form
-  return 'GET /register'
+  return view.render('user/register')
 })
 
 Route.get('/forgot-password', () => {
