@@ -35,7 +35,7 @@ const shouldHaveMessage = (method, path, message, done) => {
   }).end()
 }
 
-// Teste para forgot login
+/* --- TESTS --- */
 describe("GET /login", () => {
   it("verifica o status code (200)", done => {
     shouldBeOk('GET', '/login', done)
@@ -46,7 +46,6 @@ describe("GET /login", () => {
   })
 })
 
-// Teste para forgot pass
 describe("POST /forgot-password", () => {
   it("verifica o status code (200)", done => {
     shouldBeOk('GET', '/forgot-password', done)
@@ -57,7 +56,6 @@ describe("POST /forgot-password", () => {
   })
 })
 
-// Teste para redefinição de senha com token
 describe("GET /reset-password", () => {
   it("verifica o status code (200)", done => {
     shouldBeOk('GET', '/reset-password/token123', done)
@@ -67,8 +65,6 @@ describe("GET /reset-password", () => {
   })
 })
 
-
-// Teste para redefinição de senha com token (POST)
 describe("POST /reset-password", () => {
   it("verifica o status code (200)", done => {
     shouldBeOk('POST', '/reset-password/token123', done)
@@ -76,4 +72,30 @@ describe("POST /reset-password", () => {
   it("verifica se tem uma mensagem", done => {
     shouldHaveMessage('POST', '/reset-password/token123', 'POST /reset-password/token123', done)
   })
+})
+
+describe("GET /:customer", () => {
+  it("verifica o status code (200)", done => {
+    shouldBeOk('GET', '/assert-chris', done)
+  })
+
+  it("verifica se tem uma mensagem", done => {
+    shouldHaveMessage('GET', '/a ssert-chris', 'GET /:customer/assert-chris', done)
+  })
+})
+
+describe("PUT /:customer", () => {
+  it("verifica o status code (200)", done => {
+    shouldBeOk('PUT', '/assert-chris', done)
+  })
+  it("verifica se tem uma mensagem", done => {
+    shouldHaveMessage('PUT', '/assert-chris', 'PUT /:customer/assert-chris', done)
+  })
+})
+
+describe("DELETE /:customer", () => {
+  it("verifica o status code (200)", done => {
+    shouldBeOk('DELETE', '/assert-chris', done)
+  })
+  it("verifica se tem uma mensagem")
 })
